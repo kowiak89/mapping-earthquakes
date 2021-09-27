@@ -85,17 +85,17 @@ L.control.layers(baseMaps).addTo(map);
 
 // ********** MULTIPLE LINES ***********
 
-let torontoData = "https://raw.githubusercontent.com/kowiak89/mapping-earthquakes/main/majorAirports.json"
+// let torontoData = "https://raw.githubusercontent.com/kowiak89/mapping-earthquakes/main/torontoRoutes.json"
 
-// Grabbing our GeoJSON data.
-d3.json(torontoData).then(function(data) {
-  console.log(data);
-// Creating a GeoJSON layer with the retrieved data.
-L.geoJson(data).addTo(map);
-});
+// // Grabbing our GeoJSON data.
+// d3.json(torontoData).then(function(data) {
+//   console.log(data);
+// // Creating a GeoJSON layer with the retrieved data.
+// L.geoJson(data).addTo(map);
+// });
 
 // Accessing the Toronto neighborhoods GeoJSON URL.
-let torontoHoods = "https://raw.githubusercontent.com/kowiak89/Mapping_Earthquakes/main/torontoNeighborhoods.json";
+let torontoHoods = "https://raw.githubusercontent.com/kowiak89/mapping-earthquakes/main/torontoNeighborhoods.json";
 
 // Grabbing our GeoJSON data.
 d3.json(torontoHoods).then(function(data) {
