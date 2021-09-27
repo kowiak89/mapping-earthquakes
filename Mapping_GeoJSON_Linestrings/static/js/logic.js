@@ -63,8 +63,8 @@ let baseMaps = {
 
 // Create the map object with center, zoom level and default layer.
 let map = L.map('mapid', {
-  center: [30, 30],
-  zoom: 2,
+  center: [43.7, -79.3],
+  zoom: 11,
   layers: [streets]
 })
 
@@ -73,11 +73,32 @@ L.control.layers(baseMaps).addTo(map);
 
 // ****** MULTIPLE POINTS *******
 
-// Accessing the airport GeoJSON URL
-let airportData = "https://raw.githubusercontent.com/kowiak89/mapping-earthquakes/main/majorAirports.json"
+// // Accessing the airport GeoJSON URL
+// let airportData = "https://raw.githubusercontent.com/kowiak89/mapping-earthquakes/main/majorAirports.json"
+
+// // Grabbing our GeoJSON data.
+// d3.json(airportData).then(function(data) {
+//   console.log(data);
+// // Creating a GeoJSON layer with the retrieved data.
+// L.geoJson(data).addTo(map);
+// });
+
+// ********** MULTIPLE LINES ***********
+
+let torontoData = "https://raw.githubusercontent.com/kowiak89/mapping-earthquakes/main/majorAirports.json"
 
 // Grabbing our GeoJSON data.
-d3.json(airportData).then(function(data) {
+d3.json(torontoData).then(function(data) {
+  console.log(data);
+// Creating a GeoJSON layer with the retrieved data.
+L.geoJson(data).addTo(map);
+});
+
+// Accessing the Toronto neighborhoods GeoJSON URL.
+let torontoHoods = "https://raw.githubusercontent.com/kowiak89/Mapping_Earthquakes/main/torontoNeighborhoods.json";
+
+// Grabbing our GeoJSON data.
+d3.json(torontoHoods).then(function(data) {
   console.log(data);
 // Creating a GeoJSON layer with the retrieved data.
 L.geoJson(data).addTo(map);
